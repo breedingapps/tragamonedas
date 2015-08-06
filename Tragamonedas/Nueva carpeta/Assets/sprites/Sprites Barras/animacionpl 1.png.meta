@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: 86af8c0811879904aa52dc6dfc700157
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: animacionpl_0
+    21300002: animacionpl_1
+    21300004: animacionpl_2
+    21300006: animacionpl_3
+    21300008: animacionpl_4
+    21300010: animacionpl_5
+    21300012: animacionpl_6
+    21300014: animacionpl_7
+    21300016: animacionpl_8
+    21300018: animacionpl_9
+    21300020: animacionpl_10
+    21300022: animacionpl_11
+    21300024: animacionpl_12
+    21300026: animacionpl_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: animacionpl_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 371
+        width: 487
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: animacionpl_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 348
+        width: 487
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: animacionpl_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 325
+        width: 487
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: animacionpl_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 293
+        width: 487
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: animacionpl_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 265
+        width: 487
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: animacionpl_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 237
+        width: 487
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: animacionpl_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 212
+        width: 487
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: animacionpl_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 183
+        width: 487
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: animacionpl_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 154
+        width: 487
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: animacionpl_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 118
+        width: 487
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: animacionpl_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 85
+        width: 487
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: animacionpl_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 54
+        width: 487
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: animacionpl_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 25
+        width: 487
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: animacionpl_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 487
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
