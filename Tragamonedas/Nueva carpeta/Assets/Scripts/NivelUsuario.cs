@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+
 public class NivelUsuario : MonoBehaviour {
 	private int ExpMaxima=0;
 	private int ExpActual= 0;
 	private int LevelData=1;
+
 
 
 	private bool nivel1= false;
@@ -14,8 +17,11 @@ public class NivelUsuario : MonoBehaviour {
 	private bool nivel5= false;
 	private bool nivel6= false;
 	// Use this for initialization
-	void Start () {
 
+
+
+	void Start () {
+		ExpActual = SaveExp.saveexp.ExpOnMemory;
 		//-------------------------------------------------------------//
 		NotificationCenter.DefaultCenter().AddObserver(this,"P1L5exp");
 		NotificationCenter.DefaultCenter().AddObserver(this,"P1L4exp");
@@ -53,8 +59,14 @@ public class NivelUsuario : MonoBehaviour {
 		NotificationCenter.DefaultCenter().AddObserver(this,"P9L4exp");
 		NotificationCenter.DefaultCenter().AddObserver(this,"P9L3exp");
 		//-----------------------------------------------------------//
+		NotificationCenter.DefaultCenter().AddObserver(this, "Parallax5");
 	}
 
+	void Parallax5(Notification notification){
+
+		SaveExp.saveexp.ExpOnMemory = ExpActual;
+		SaveExp.saveexp.Guardar ();
+	}
 
 
 	//--------------p1----------------
@@ -235,4 +247,10 @@ public class NivelUsuario : MonoBehaviour {
 			
 		}
 	}
+
+
 }
+
+
+
+
