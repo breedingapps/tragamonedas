@@ -80,65 +80,63 @@ namespace Soomla.Store {
 					jniGooglePlayIabService.Call("setPublicKey", StoreSettings.AndroidPublicKey);
 
 
-					if (StoreSettings.PlaySsvValidation) {
-						using(AndroidJavaObject obj_HashMap = new AndroidJavaObject("java.util.HashMap"))
-						{
-							IntPtr method_Put = AndroidJNIHelper.GetMethodID(obj_HashMap.GetRawClass(), "put",
-							                                                 "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;");
-							
-							object[] args = new object[2];
+					using(AndroidJavaObject obj_HashMap = new AndroidJavaObject("java.util.HashMap"))
+					{
+						IntPtr method_Put = AndroidJNIHelper.GetMethodID(obj_HashMap.GetRawClass(), "put",
+						                                                 "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;");
+						
+						object[] args = new object[2];
 
-							// client ID
-							using(AndroidJavaObject k = new AndroidJavaObject("java.lang.String", "clientId"))
+						// client ID
+						using(AndroidJavaObject k = new AndroidJavaObject("java.lang.String", "clientId"))
+						{
+							using(AndroidJavaObject v = new AndroidJavaObject("java.lang.String", StoreSettings.PlayClientId))
 							{
-								using(AndroidJavaObject v = new AndroidJavaObject("java.lang.String", StoreSettings.PlayClientId))
-								{
-									args[0] = k;
-									args[1] = v;
-									AndroidJNI.CallObjectMethod(obj_HashMap.GetRawObject(),
-									                            method_Put, AndroidJNIHelper.CreateJNIArgArray(args));
-	                            }
-	                        }
-							
-							// client secret
-							using(AndroidJavaObject k = new AndroidJavaObject("java.lang.String", "clientSecret"))
+								args[0] = k;
+								args[1] = v;
+								AndroidJNI.CallObjectMethod(obj_HashMap.GetRawObject(),
+								                            method_Put, AndroidJNIHelper.CreateJNIArgArray(args));
+                            }
+                        }
+						
+						// client secret
+						using(AndroidJavaObject k = new AndroidJavaObject("java.lang.String", "clientSecret"))
+						{
+							using(AndroidJavaObject v = new AndroidJavaObject("java.lang.String", StoreSettings.PlayClientSecret))
 							{
-								using(AndroidJavaObject v = new AndroidJavaObject("java.lang.String", StoreSettings.PlayClientSecret))
-								{
-									args[0] = k;
-									args[1] = v;
-									AndroidJNI.CallObjectMethod(obj_HashMap.GetRawObject(),
-									                            method_Put, AndroidJNIHelper.CreateJNIArgArray(args));
-	                            }
-	                        }
-	                        
-							// refresh token
-							using(AndroidJavaObject k = new AndroidJavaObject("java.lang.String", "refreshToken"))
+								args[0] = k;
+								args[1] = v;
+								AndroidJNI.CallObjectMethod(obj_HashMap.GetRawObject(),
+								                            method_Put, AndroidJNIHelper.CreateJNIArgArray(args));
+                            }
+                        }
+                        
+						// refresh token
+						using(AndroidJavaObject k = new AndroidJavaObject("java.lang.String", "refreshToken"))
+						{
+							using(AndroidJavaObject v = new AndroidJavaObject("java.lang.String", StoreSettings.PlayRefreshToken))
 							{
-								using(AndroidJavaObject v = new AndroidJavaObject("java.lang.String", StoreSettings.PlayRefreshToken))
-								{
-									args[0] = k;
-									args[1] = v;
-									AndroidJNI.CallObjectMethod(obj_HashMap.GetRawObject(),
-									                            method_Put, AndroidJNIHelper.CreateJNIArgArray(args));
-								}
+								args[0] = k;
+								args[1] = v;
+								AndroidJNI.CallObjectMethod(obj_HashMap.GetRawObject(),
+								                            method_Put, AndroidJNIHelper.CreateJNIArgArray(args));
 							}
-							
-							// verifyOnServerFailure
-							using(AndroidJavaObject k = new AndroidJavaObject("java.lang.String", "verifyOnServerFailure"))
+						}
+						
+						// verifyOnServerFailure
+						using(AndroidJavaObject k = new AndroidJavaObject("java.lang.String", "verifyOnServerFailure"))
+						{
+							using(AndroidJavaObject v = new AndroidJavaObject("java.lang.Boolean", StoreSettings.PlayVerifyOnServerFailure))
 							{
-								using(AndroidJavaObject v = new AndroidJavaObject("java.lang.Boolean", StoreSettings.PlayVerifyOnServerFailure))
-								{
-									args[0] = k;
-									args[1] = v;
-									AndroidJNI.CallObjectMethod(obj_HashMap.GetRawObject(),
-									                            method_Put, AndroidJNIHelper.CreateJNIArgArray(args));
-								}
+								args[0] = k;
+								args[1] = v;
+								AndroidJNI.CallObjectMethod(obj_HashMap.GetRawObject(),
+								                            method_Put, AndroidJNIHelper.CreateJNIArgArray(args));
 							}
-							
-							jniGooglePlayIabService.Call("configVerifyPurchases", obj_HashMap);
-	                    }
-					}
+						}
+						
+						jniGooglePlayIabService.Call("configVerifyPurchases", obj_HashMap);
+                    }
                     
                     jniGooglePlayIabServiceClass.SetStatic("AllowAndroidTestPurchases", StoreSettings.AndroidTestPurchases);
 				}
