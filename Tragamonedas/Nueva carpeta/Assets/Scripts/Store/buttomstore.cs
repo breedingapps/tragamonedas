@@ -7,7 +7,9 @@ public class buttomstore : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+	void OnMouseDown(){
+		Application.LoadLevel ("Store");
+	}
 	// Update is called once per frame
 	void Update () {
 	
