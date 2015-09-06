@@ -408,8 +408,14 @@ public class ValidarApuesta : MonoBehaviour {
 
 		NotificationCenter.DefaultCenter ().AddObserver (this, "Parallax5");
 		NotificationCenter.DefaultCenter ().AddObserver (this, "MoreCoins");
-	}
 
+		//=================================
+		NotificationCenter.DefaultCenter().AddObserver(this, "pack50");
+	}
+	void pack50(){
+		TotalMonedas += 50;
+		Inicio();
+	}
 	void ActivarPayline2(){
 		Payline2.SetActive (true);
 	}

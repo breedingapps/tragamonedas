@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Soomla.Store;
 
 namespace Soomla.Store.Example {
 	
@@ -21,65 +22,65 @@ namespace Soomla.Store.Example {
 		/// see parent.
 		/// </summary>
 		public VirtualCurrency[] GetCurrencies() {
-			return new VirtualCurrency[]{MUFFIN_CURRENCY};
+			return new VirtualCurrency[]{SLOT_CURRENCY_ITEM};
 		}
 		
 		/// <summary>
 		/// see parent.
 		/// </summary>
 		public VirtualGood[] GetGoods() {
-			return new VirtualGood[] {MUFFINCAKE_GOOD, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG};
+			return new VirtualGood[] {NO_ADS_LTVG};
 		}
 		
 		/// <summary>
 		/// see parent.
 		/// </summary>
 		public VirtualCurrencyPack[] GetCurrencyPacks() {
-			return new VirtualCurrencyPack[] {TENMUFF_PACK, FIFTYMUFF_PACK, FOURHUNDMUFF_PACK, THOUSANDMUFF_PACK};
+			return new VirtualCurrencyPack[] {FIFTYCURRENCY_PACK_PRODUCT};
 		}
 		
 		/// <summary>
 		/// see parent.
 		/// </summary>
 		public VirtualCategory[] GetCategories() {
-			return new VirtualCategory[]{GENERAL_CATEGORY};
+			return new VirtualCategory[]{};
 		}
+
 		
 		/** Static Final Members **/
+
+
+
+		public const string SLOT_CURRENCY_ITEM_ID      = "currency.test_1";
 		
-		public const string MUFFIN_CURRENCY_ITEM_ID      = "currency_muffin";
+		//public const string TENMUFF_PACK_PRODUCT_ID      = "android.test.refunded";
 		
-		public const string TENMUFF_PACK_PRODUCT_ID      = "android.test.refunded";
+		public const string FIFTYCURRENCY_PACK_PRODUCT_ID    = "currency.pack.test_50";
+
+			public const string NO_ADS_LIFETIME_PRODUCT_ID = "no_ads";
 		
-		public const string FIFTYMUFF_PACK_PRODUCT_ID    = "android.test.canceled";
-		
-		public const string FOURHUNDMUFF_PACK_PRODUCT_ID = "android.test.purchased";
-		
-		public const string THOUSANDMUFF_PACK_PRODUCT_ID = "2500_pack";
-		
-		public const string MUFFINCAKE_ITEM_ID   = "fruit_cake";
-		
-		public const string PAVLOVA_ITEM_ID   = "pavlova";
-		
-		public const string CHOCLATECAKE_ITEM_ID   = "chocolate_cake";
-		
-		public const string CREAMCUP_ITEM_ID   = "cream_cup";
-		
-		public const string NO_ADS_LIFETIME_PRODUCT_ID = "no_ads";
-		
-		
+	
 		/** Virtual Currencies **/
 		
-		public static VirtualCurrency MUFFIN_CURRENCY = new VirtualCurrency(
-			"Muffins",										// name
-			"",												// description
-			MUFFIN_CURRENCY_ITEM_ID							// item id
+		public static VirtualCurrency SLOT_CURRENCY_ITEM = new VirtualCurrency(
+			"Coins",										// name
+			"One coin Slot machine",												// description
+			SLOT_CURRENCY_ITEM_ID							// item id
 			);
 		
 		
 		/** Virtual Currency Packs **/
-		
-		public static VirtualCurrencyPack TENMUFF_PACK = new VirtualCurrencyPack(
+
+		public static VirtualCurrencyPack FIFTYCURRENCY_PACK_PRODUCT = new VirtualCurrencyPack(
+			"50 coins",                                   // name
+			"Test cancellation of an item",                 // description
+			"coins_50",                                   // item id
+			50,                                             // number of currencies in the pack
+			SLOT_CURRENCY_ITEM_ID,                        // the currency associated with this pack
+			new PurchaseWithMarket(FIFTYCURRENCY_PACK_PRODUCT_ID, 1.99)
+			);
+
+		/*public static VirtualCurrencyPack TENMUFF_PACK = new VirtualCurrencyPack(
 			"10 Muffins",                                   // name
 			"Test refund of an item",                       // description
 			"muffins_10",                                   // item id
@@ -88,14 +89,7 @@ namespace Soomla.Store.Example {
 			new PurchaseWithMarket(TENMUFF_PACK_PRODUCT_ID, 0.99)
 			);
 		
-		public static VirtualCurrencyPack FIFTYMUFF_PACK = new VirtualCurrencyPack(
-			"50 Muffins",                                   // name
-			"Test cancellation of an item",                 // description
-			"muffins_50",                                   // item id
-			50,                                             // number of currencies in the pack
-			MUFFIN_CURRENCY_ITEM_ID,                        // the currency associated with this pack
-			new PurchaseWithMarket(FIFTYMUFF_PACK_PRODUCT_ID, 1.99)
-			);
+
 		
 		public static VirtualCurrencyPack FOURHUNDMUFF_PACK = new VirtualCurrencyPack(
 			"400 Muffins",                                  // name
@@ -115,7 +109,7 @@ namespace Soomla.Store.Example {
 			new PurchaseWithMarket(THOUSANDMUFF_PACK_PRODUCT_ID, 8.99)
 			);
 		
-		/** Virtual Goods **/
+		/** Virtual Goods 
 		
 		public static VirtualGood MUFFINCAKE_GOOD = new SingleUseVG(
 			"Fruit Cake",                                       		// name
@@ -143,13 +137,13 @@ namespace Soomla.Store.Example {
 			new PurchaseWithVirtualItem(MUFFIN_CURRENCY_ITEM_ID, 50));  // the way this virtual good is purchased
 		
 		
-		/** Virtual Categories **/
+		/** Virtual Categories 
 		// The muffin rush theme doesn't support categories, so we just put everything under a general category.
 		public static VirtualCategory GENERAL_CATEGORY = new VirtualCategory(
 			"General", new List<string>(new string[] { MUFFINCAKE_ITEM_ID, PAVLOVA_ITEM_ID, CHOCLATECAKE_ITEM_ID, CREAMCUP_ITEM_ID })
 			);
 		
-		
+		**/
 		/** LifeTimeVGs **/
 		// Note: create non-consumable items using LifeTimeVG with PuchaseType of PurchaseWithMarket
 		public static VirtualGood NO_ADS_LTVG = new LifetimeVG(
@@ -158,5 +152,7 @@ namespace Soomla.Store.Example {
 			"no_ads",														// item id
 			new PurchaseWithMarket(NO_ADS_LIFETIME_PRODUCT_ID, 0.99));	// the way this virtual good is purchased
 	}
-	
+
+
+
 }

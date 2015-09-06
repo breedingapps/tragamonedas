@@ -7,9 +7,10 @@ public class GA1 : MonoBehaviour {
 	//public float tiempoMin = 1.25f;
 	//public float tiempoMax = 2.5f;
 	private bool fin = false;
-	
+
 	
 	void Start () {
+
 		NotificationCenter.DefaultCenter ().AddObserver (this, "DBA1");
 		NotificationCenter.DefaultCenter().AddObserver(this, "BotonPresionadoDeNuevo");
 		NotificationCenter.DefaultCenter ().AddObserver (this, "BotonPresionado");
